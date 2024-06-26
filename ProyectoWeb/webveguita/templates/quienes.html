@@ -1,68 +1,80 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="Css/quienes.css">
-        <title>Inicio - Quienes Somos</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/quienes.css' %}">
+    <title>Inicio - Quienes Somos</title>
+</head>
 
-    <body>
-        <header class="header">
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="{% url 'inicio' %}">
+                <img src="{% static 'imagenes/logo.png' %}" alt="loguito">
+            </a>
+        </div>
 
-            <div class="logo">
-                <img src="imagenes/logo.png" alt="loguito" href="inicio.html">
+        <nav class="opciones1">
+            <ul class="opciones1-links">
+                <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                <li><a href="{% url 'quienes' %}">Quienes Somos</a></li>
+                <li><a href="{% url 'galeria' %}">Galeria de fotos</a></li>
+            </ul>
+        </nav>
+
+        <a href="{% url 'solicitar' %}" class="btn"><button>Solicitar</button></a>
+    </header>
+    <hr>
+
+    <section>
+        <article id="texto1">
+            <p>
+                <span>
+                    "Somos una PYME llamada 'La Veguita', un bazar donde vendemos todo tipo de artículos. Esta es una extensión de nuestro emprendimiento en la cual nuestra misión es ofrecer un servicio de confianza y seguridad al recibir paquetes de ChileExpress, Starken y Mercado Libre. Las personas los encargan y nosotros nos ocupamos de recibir y almacenarlos hasta su retiro. Esto lo hacemos pensando en aquellos vecinos que debido a su horario laboral u otros motivos no tienen tiempo para recibir sus encomiendas, así que nosotros nos encargamos de hacerlo y entregarles esa comodidad y tranquilidad. Nuestros precios son desde $1000 según el tamaño de la encomienda y la disponibilidad siempre será diaria."
+                    <br><br><br>
+                    El propósito de esta página web es facilitar el proceso de encargo para recibir las encomiendas además de buscar un mejor orden, registro exacto y organización para el cliente. También se busca hacer este proceso amigable e intuitivo para que el usuario se sienta cómodo y a la vez sienta confianza al momento de usar nuestra página web.
+                </span>
+            </p>
+            <aside>
+                <img id="fotocajas" width="400" height="400" src="{% static 'imagenes/cajas1.jpg' %}" alt="">
+            </aside>
+        </article>
+
+        <article class="imagenes1">
+            <a href="#" onclick="openModal('https://www.youtube.com/embed/-4HgdO170Pg')">
+                <img src="{% static 'imagenes/chileexpress.png' %}" alt="ChileExpress">
+            </a>
+            <a href="#" onclick="openModal('https://www.youtube.com/embed/g_9bbopwReY')">
+                <img src="{% static 'imagenes/mercadolibre.jpg' %}" alt="MercadoLibre">
+            </a>
+            <a href="#" onclick="openModal('https://www.youtube.com/embed/RBugLHmS2A0')">
+                <img src="{% static 'imagenes/starken.jpg' %}" alt="Starken">
+            </a>
+        </article>
+        
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div class="video-container">
+                    <iframe id="videoFrame" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
             </div>
-    
-            <nav class="opciones1">
-                <ul class="opciones1-links">
-                    <li><a href="inicio.html">Inicio</a></li>
-                    <li><p href="quienes.html">Quienes Somos</p></li>
-                    <li><a href="galeria.html">Galeria de fotos</a></li>
-                </ul>
-            </nav>
-            <a href="solicitar.html" class="btn"><button>Solicitar</button></a>
-        </header>
-        <hr>
-        <section>
-            <article id="texto1">
-                <p><span> "Somos una PYME llamada "La Veguita", un bazar donde vendemos todo tipo de articulos y esta es una extension de nuestro emprendimiento
-                    en la cual nuestra mision es ofrecer un servicio de confianza y seguridad al recibir paquetes de ChileExpress, Starken y Mercado Libre. Las personas lo encargan y nosotros nos ocupamos
-                    de recibir y almacenarlos hasta su retiro esto lo hacemos pensando en aquellos vecinos que debido a su horario laboral o por algun otro motivo no tienen tiempo
-                    para recibir sus encomiendas, asi que nosotros nos encargamos de hacerlo y entregarles esa comodidad y tranquilidad. nuestros precios son desde $1000 segun el tamaño de la encomienda y la disponibilidad
-                    siempre sera diaria".
-                    <br>
-                    <br>
-                    <br>
-                    El proposito de esta pagina web sera facilitar el proceso de encargo para recibir las encomiendas ademas de buscar
-                    un mejor orden, registro exacto y organizacion para el cliente, tambien se busca hacer este proceso
-                    amigable e intuitivo para que el usuario se sienta comodo y a la vez sienta confianza al momento de usar nuestra pagina web
-                </p></span>
-                <aside>
-                    <img id="fotocajas" width="400" height="400" src="imagenes/cajas1.jpg" alt="">
-                </aside>
-            </article>
+        </div>
+    </section>
+    <hr>
 
-            <article class="imagenes1">
-                <a href="https://www.youtube.com/watch?v=-4HgdO170Pg&ab_channel=Chilexpress"><img src="imagenes/chileexpress.png"></a>
-                <a href="https://www.youtube.com/watch?v=g_9bbopwReY&ab_channel=DossierNet"><img src="imagenes/mercadolibre.jpg"></a>
-                <a href="https://www.youtube.com/watch?v=RBugLHmS2A0&ab_channel=StarkenChile"><img src="imagenes/starken.jpg"></a>
-            </article>
-        </section>
-        <hr>
-        <footer class="footer">
-            <p id="texto3">Lucas Rodriguez, Cristobal Asencio @Copyrigth Derechos reservados.</p>
-            <div class="redes">
-                <a class="opboton" href="opinion.html"><button>Dejanos tu opinion</button></a>
-                <img src="imagenes/whatsapp.png" alt="redwsp">
-                <img src="imagenes/facebook.png" alt="redfacebook">
-            </div>
-        </footer>
-    </body>
+    <footer class="footer">
+        <p id="texto3">Lucas Rodriguez, Cristobal Asencio @Copyrigth Derechos reservados.</p>
+        <div class="redes">
+            <a class="opboton" href="{% url 'opinion' %}"><button>Dejanos tu opinión</button></a>
+            <img src="{% static 'imagenes/whatsapp.png' %}" alt="redwsp">
+            <img src="{% static 'imagenes/facebook.png' %}" alt="redfacebook">
+        </div>
+    </footer>
 
+    <script src="{% static 'js/videos.js' %}"></script>
 
-
-
-
-
-
+</body>
 </html>

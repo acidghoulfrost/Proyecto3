@@ -22,9 +22,9 @@ def solicitar(request):
     context={}
     return render(request, 'solicitar.html', context)
 
-def login(request):
-    context={}
-    return render(request, 'login.html', context)
+def login_view(request):
+    return render(request, 'login.html')
+
 
 def registro(request):
     context={}
