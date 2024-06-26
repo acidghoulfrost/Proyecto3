@@ -21,3 +21,11 @@ def quienes(request):
 def solicitar(request):
     context={}
     return render(request, 'solicitar.html', context)
+
+def login(request):
+    context={}
+    return render(request, 'login.html', context)
+
+def registro(request):
+    context={}
+    return render(request, 'registro.html', context)
