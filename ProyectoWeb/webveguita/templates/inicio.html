@@ -29,6 +29,19 @@
             </ul>
         </nav>
         <a href="solicitar.html" class="btn"><button>Solicitar</button></a>
+        <div>
+            {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}" id="userBookStop">
+                <img src="{% static 'img/user-vector-icon.png' %}" 
+                    alt="userBookStop" width="20px">Cerrar sesión
+            </a>
+            {% else %} 
+            <a href="{% url 'login' %}" id="userBookStop">
+                <img src="{% static 'img/user-vector-icon.png' %}" 
+                    alt="userBookStop" width="20px">Iniciar sesión
+            </a>
+            {% endif %}
+        </div>
     </header>
 
     <div class="parrafo1">
