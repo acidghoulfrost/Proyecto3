@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://wallpaperbat.com/img/9727573-sugar-cotton-blue-clouds-vector-design.jpg);
+}
+
+.header {
+    background-color: rgb(0, 171, 228);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 5px 10%;
+    box-shadow: 0 2px 35px rgb(43, 43, 43);
+}
+
+.header .logo img{
+    height: 230px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+
+.header .logo {
+    cursor: pointer;
+}
+
+.logo img:hover{
+    transform: scale(1.2);
+}
+
+.header .opciones1-links {
+    list-style: none;
+    
+}
+
+.header .opciones1-links li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.header .opciones1-links li:hover {
+    transform: scale(1.1);
+    border-radius: 30px;
+    border-style: solid;
+    border-color: white;
+}
+
+.header .opciones1-links a {
+    font-size: 700;
+    color: rgb(245, 245, 220);
+    text-decoration: none;
+}
+
+.header .opciones1-links li a:hover {
+    color: white;
+}
+
+.header .btn button {
+    font-weight: 700;
+    color: rgb(0, 171, 228);
+    padding: 9px 25px;
+    background: rgb(245, 245, 220);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+}
+
+.header .btn button:hover {
+    background-color: rgb(245, 245, 220);
+    color: rgb(0, 0, 0);
+    transform: scale(1.1);
+}
+
+
+
+#titulo1{
+    text-align: center;
+}
+
+#texto1 {
+    background-color: rgb(245, 245, 220);
+    box-shadow: 0 2px 5px rgb(87, 87, 87);
+
+    padding:  20px;
+    border-radius: 5px;
+
+    display: flex;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+}
+
+.imagenes1 a {
+        padding: 20px;
+        display: inline-flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: center;
+}
+
+.imagenes1 img {
+    height: 70px;
+    width: auto;
+
+}
+
+#fotocajas {
+    opacity: 70%;
+}
+
+.footer{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+}
+
+#texto3 {
+    flex-grow: 1;
+}
+
+.redes{
+    gap: 40px;
+    display: flex;
+}
+
+.redes img{
+    height: 40px;
+    width: 40px;
+}
+
+.redes button {
+    font-weight: 700;
+    color: rgb(0, 171, 228);
+    padding: 9px 25px;
+    background: rgb(245, 245, 220);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+}
+
+.redes button:hover {
+    background-color: rgb(245, 245, 220);
+    color: rgb(0, 0, 0);
+    transform: scale(1.1);
+}

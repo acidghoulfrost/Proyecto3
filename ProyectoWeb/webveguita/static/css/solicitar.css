@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: rgb(245, 245, 220);
+}
+
+
+.header {
+    background-color: rgb(0, 171, 228);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 5px 10%;
+    box-shadow: 0 2px 35px rgb(43, 43, 43);
+}
+
+.header .logo img{
+    height: 230px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+
+.header .logo {
+    cursor: pointer;
+}
+
+.logo img:hover{
+    transform: scale(1.2);
+}
+
+.header .opciones1-links {
+    list-style: none;
+    
+}
+
+.header .opciones1-links li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.header .opciones1-links li:hover {
+    transform: scale(1.1);
+    border-radius: 30px;
+    border-style: solid;
+    border-color: white;
+}
+
+.header .opciones1-links a {
+    font-size: 700;
+    color: rgb(245, 245, 220);
+    text-decoration: none;
+}
+
+.header .opciones1-links li a:hover {
+    color: white;
+}
+
+.form {
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.formnombre,
+.formapellido,
+.selectpaquete,
+.textdetalle,
+.enviar {
+    margin: 30px 0;
+    padding: 13px;
+}
+
+.form {
+    background-color: rgb(0, 171, 228);
+    border-radius: 50px;
+    box-shadow: 0 2px 35px rgb(43, 43, 43);
+}
+
+.enviar {
+    font-weight: 700;
+    color: rgb(0, 171, 228);
+    padding: 9px 25px;
+    background: rgb(245, 245, 220);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+
+.imagencaja2 img {
+    height: 300px;
+    width: auto;;
+    float: right;
+}
