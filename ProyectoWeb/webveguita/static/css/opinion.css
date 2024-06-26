@@ -1,80 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;
-}
-
-.header {
-    background-color: rgb(0, 171, 228);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-    padding: 5px 10%;
-    box-shadow: 0 2px 35px rgb(43, 43, 43);
-}
-
-.header .logo img{
-    height: 230px;
-    width: auto;
-    transition: all 0.3s;
-}
-
-
-.header .logo {
-    cursor: pointer;
-}
-
-.logo img:hover{
-    transform: scale(1.2);
-}
-
-.header .opciones1-links {
-    list-style: none;
-    
-}
-
-.header .opciones1-links li{
-    display: inline-block;
-    padding: 0 20px;
-}
-
-.header .opciones1-links li:hover {
-    transform: scale(1.1);
-    border-radius: 30px;
-    border-style: solid;
-    border-color: white;
-}
-
-.header .opciones1-links a {
-    font-size: 700;
-    color: rgb(245, 245, 220);
-    text-decoration: none;
-}
-
-.header .opciones1-links li a:hover {
-    color: white;
-}
-
-.header .btn button {
-    font-weight: 700;
-    color: rgb(0, 171, 228);
-    padding: 9px 25px;
-    background: rgb(245, 245, 220);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-
-}
-
-.header .btn button:hover {
-    background-color: rgb(245, 245, 220);
-    color: rgb(0, 0, 0);
-    transform: scale(1.1);
 }
 
 body {
@@ -85,83 +15,146 @@ body {
     overflow: visible;
 }
 
-.center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
+.header {
     background-color: rgb(0, 171, 228);
-    border-radius: 10px;
-    box-shadow: 0 2px 30px rgb(47, 47, 47);
-}
-
-.center h1 {
-    text-align: center;
-    padding: 0 0 20px 0px;
-    border-bottom: 1px solid silver;
-}
-
-.center form {
-    padding: 0 40px;
-    box-sizing: border-box;
-}
-
-.tipo,
-.textarea,
-.enviar {
-    margin: 35px auto;
-    display: block;
-    width: 80%;
-}
-
-
-.enviar {
-    border-radius: 50px;
-    background-color: rgb(245, 245, 220);
-}
-
-.footer{
+    display: flex;
     justify-content: space-between;
-    display: flex;
     align-items: center;
-    border-radius: 20px;
+    height: 80px;
+    padding: 10px 5%;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 }
 
-#texto3 {
-    flex-grow: 1;
+.header .logo img {
+    height: 150px;
+    width: auto;
+    transition: transform 0.3s ease;
 }
 
-.redes{
-    gap: 40px;
-    display: flex;
+.header .logo {
+    cursor: pointer;
 }
 
-.redes img{
-    height: 40px;
-    width: 40px;
+.header .opciones1-links {
+    list-style: none;
+    margin-right: 30px;
 }
 
-button {
+.header .opciones1-links li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.header .opciones1-links a {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(245, 245, 220);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.header .opciones1-links li:hover {
+    transform: scale(1.1);
+    border-radius: 30px;
+    border: 1px solid white;
+}
+
+.header .opciones1-links a:hover {
+    color: white;
+}
+
+.header .btn button {
     font-weight: 700;
     color: rgb(0, 171, 228);
-    padding: 9px 25px;
+    padding: 10px 25px;
     background: rgb(245, 245, 220);
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    transition: all 0.3s ease 0s;
-
+    transition: all 0.3s ease;
 }
 
-button:hover {
+.header .btn button:hover {
     background-color: rgb(245, 245, 220);
     color: rgb(0, 0, 0);
     transform: scale(1.1);
 }
 
-h1 {
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    background-color: rgb(0, 171, 228);
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    padding: 30px;
     text-align: center;
 }
 
+.center h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: rgb(245, 245, 220);
+}
+
+.center form {
+    margin-top: 20px;
+}
+
+.center form .tipo,
+.center form .textarea,
+.center form .enviar {
+    margin: 15px auto;
+    width: 80%;
+}
+
+.center form .enviar {
+    padding: 10px 25px;
+    border-radius: 50px;
+    background-color: rgb(245, 245, 220);
+    color: rgb(0, 171, 228);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.center form .enviar:hover {
+    background-color: rgb(0, 171, 228);
+    color: rgb(245, 245, 220);
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+.redes img {
+    height: 30px;
+    width: 30px;
+}
+
+.redes button {
+    font-weight: 700;
+    color: rgb(0, 171, 228);
+    padding: 8px 20px;
+    background: rgb(245, 245, 220);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.redes button:hover {
+    background-color: rgb(0, 171, 228);
+    color: rgb(245, 245, 220);
+    transform: scale(1.1);
+}
 
