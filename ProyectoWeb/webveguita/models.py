@@ -1,38 +1,41 @@
+import datetime
 from django.db import models
 
 # Create your models here.
 
-class Cajas(models.Model):
-    id_caja=models.CharField(primary_key=True, max_length=8, verbose_name="Codigo Caja")
-    tipo_caja= models.CharField(max_length=50, verbose_name="Tipo Caja")
-    peso_kg=models.CharField(max_length=50, verbose_name="Peso KG")
-    dimension=models.CharField(max_length=50, verbose_name= "Dimension Caja")
-    empresa_envio=models.ForeignKey(Categoria, on_delete=models.CASCADE, verbose_name="Categoria")
+class Cliente(models.Model):
+    rut = models.CharField(primary_key=True, max_length=7, verbose_name="Rut")
+    nombre = models.CharField(max_length=50, verbose_name="Nombre")
+    apellido = models.CharField(max_length=50, verbose_name="Apellido")
+    correo = models.EmailField(max_length=200, verbose_name="Correo")
+    num_telefono = models.IntegerField()
+
+    def __str__(self):
+        return self.rut
     
+class Cajas(models.Model):
+    id_caja = models.AutoField(primary_key=True)
+    tipo_caja = models.CharField(max_length=25)
+    peso = models.IntegerField()
+    dimension = models.CharField(max_length=10)
+
     def __str__(self):
         return self.id_caja
     
-class Cajas(models.Model):
-    cod_caja = models.CharField(primary_key=True, max_length=5)
-    peso = models.CharField(max_length=3)
-    empresa = models.CharField(max_length=20)
-    precio = models.CharField(max_length=6)
-    tipo_caja = models.CharField(max_length=10)
-
-    def __str__(self):
-        return self.cod_caja
-
 class Boleta(models.Model):
-    id_boleta = models.CharField(primary_key=True, max_length=5)
-    nombre_cliente = models.CharField(max_length=20)
-    valor = models.DecimalField(max_digits=6, decimal_places=2)
-    descripcion = models.CharField(max_length=40)
-    fecha_recepcion = models.DateField()
-    fecha_entrega = models.DateField(blank=True, null=True)
-    cajas = models.ManyToManyField(Cajas)
-
-class Detalle_boleta(models.Model):
-    cod_boleta = models.DecimalField(max_digits=6, decimal_places=2)
+    id_boleta = models.AutoField(primary_key=True)
+    total = models.BigIntegerField(default=0)
+    fecha_compra = models.DateTimeField(blank=False, null=False, default=datetime.datetime.now)
 
     def __str__(self):
-        return f'Boleta {self.id_boleta} - {self.nombre_cliente}'
+        return self.id_boleta
+    
+class Detalle_boleta(models.Model):
+    id_boleta = models.ForeignKey('Boleta', blank=True, on_delete=models.CASCADE)
+    id_detalle_boleta = models.AutoField(primary_key=True)
+    id_caja = models.ForeignKey('Cajas', blank=True, on_delete=models.CASCADE)
+    cantidad = models.IntegerField()
+    subtotal = models.BigIntegerField()
+
+    def __str__(self):
+        return str(self.id_detalle_boleta)
