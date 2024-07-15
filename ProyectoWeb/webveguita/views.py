@@ -35,7 +35,7 @@ def registro(request):
 
 def registro_usuario(request):
     if request.method == 'POST':
-        form = RegistroUserFrom(request.POSt)
+        form = RegistroUserFrom(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, 'Registro con exito! inicia sesion')
