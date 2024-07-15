@@ -4,130 +4,154 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de fotos</title>
     <link rel="stylesheet" href="{% static 'Css/galeria.css' %}">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
-
         <div class="logo">
             <img src="{% static 'imagenes/logo.png' %}" alt="loguito" href="inicio.html">
         </div>
-
         <nav class="opciones1">
             <ul class="opciones1-links">
                 <li><a href="{% url 'inicio' %}">Inicio</a></li>
                 <li><a href="{% url 'quienes' %}">Quienes Somos</a></li>
-                <li><p href="galeria.html">Galeria de fotos</p></li>
+                <li><a href="galeria.html">Galería de fotos</a></li>
             </ul>
         </nav>
         <a href="{% url 'solicitar' %}" class="btn"><button>Solicitar</button></a>
     </header>
    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    {% load static %}
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Galería de fotos</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    </head>
-    <body>
-    
-        <div class="row m-5">
-            <div class="col-lg-3 mb-3">
-                <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImagen1">
-                    <img class="w-100 mb-4 rounded" src="{% static 'imagenes/gale1.jpg' %}" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 mb-3">
-                <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImagen2">
-                    <img class="w-100 mb-4 rounded" src="{% static 'imagenes/gale2.jpg' %}" alt="">
-                </a>
-            </div>
-            <div class="col-lg-2 mb-5">
-                <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImagen3">
-                    <img class="w-100 mb-4 rounded" src="{% static 'imagenes/gale3.jpg' %}" alt="">
-                </a>
-            </div>
-            <div class="col-lg-2 mb-5">
-                <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImagen4">
-                    <img class="w-100 mb-4 rounded" src="{% static 'imagenes/gale4.jpg' %}" alt="">
-                </a>
-            </div>
-            <div class="col-lg-2 mb-1">
-                <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImagen5">
-                    <img class="w-100 mb-4 rounded" src="{% static 'imagenes/gale5.jpg' %}" alt="">
-                </a>
-            </div>
+    <div class="row m-5">
+        <div class="col-lg-3 mb-3">
+            <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImagen1">
+                <img class="w-100 mb-4 rounded" src="{% static 'imagenes/gale1.jpg' %}" alt="">
+            </a>
+            <button class="btn btn-primary btn-block mt-2" onclick="agregarAlCarrito('Caja pequeña', 2000)">Agregar al carrito</button>
         </div>
-    
-        <div class="modal fade" id="modalImagen1" tabindex="-1" aria-labelledby="modalImagen1Label" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <img src="{% static 'imagenes/gale1.jpg' %}" class="w-100 mb-3 rounded" alt="">
-                    <p class="modal-description">Caja pequeña Valor:2000</p>
-                </div>
-            </div>
+        <div class="col-lg-3 mb-3">
+            <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImagen2">
+                <img class="w-100 mb-4 rounded" src="{% static 'imagenes/gale2.jpg' %}" alt="">
+            </a>
+            <button class="btn btn-primary btn-block mt-2" onclick="agregarAlCarrito('Caja mediana', 4000)">Agregar al carrito</button>
         </div>
-    
-        <div class="modal fade" id="modalImagen2" tabindex="-1" aria-labelledby="modalImagen2Label" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <img src="{% static 'imagenes/gale2.jpg' %}" class="w-100 mb-3 rounded" alt="">
-                    <p class="modal-description">Caja mediana Valor:4000</p>
-                </div>
-            </div>
+        <div class="col-lg-2 mb-5">
+            <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImagen3">
+                <img class="w-100 mb-4 rounded" src="{% static 'imagenes/gale3.jpg' %}" alt="">
+            </a>
+            <button class="btn btn-primary btn-block mt-2" onclick="agregarAlCarrito('Caja grande', 6000)">Agregar al carrito</button>
         </div>
-    
-        <div class="modal fade" id="modalImagen3" tabindex="-1" aria-labelledby="modalImagen3Label" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <img src="{% static 'imagenes/gale3.jpg' %}" class="w-100 mb-3 rounded" alt="">
-                    <p class="modal-description">Caja grande Valor:6000</p>
-                </div>
-            </div>
+        <div class="col-lg-2 mb-5">
+            <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImagen4">
+                <img class="w-100 mb-4 rounded" src="{% static 'imagenes/gale4.jpg' %}" alt="">
+            </a>
+            <button class="btn btn-primary btn-block mt-2" onclick="agregarAlCarrito('Sobre grande', 1000)">Agregar al carrito</button>
         </div>
-    
-        <div class="modal fade" id="modalImagen4" tabindex="-1" aria-labelledby="modalImagen4Label" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <img src="{% static 'imagenes/gale4.jpg' %}" class="w-100 mb-3 rounded" alt="">
-                    <p class="modal-description">Sobre grande Valor:1000</p>
-                </div>
-            </div>
+        <div class="col-lg-2 mb-1">
+            <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImagen5">
+                <img class="w-100 mb-4 rounded" src="{% static 'imagenes/gale5.jpg' %}" alt="">
+            </a>
+            <button class="btn btn-primary btn-block mt-2" onclick="agregarAlCarrito('Sobre grande', 1500)">Agregar al carrito</button>
         </div>
-    
-        <div class="modal fade" id="modalImagen5" tabindex="-1" aria-labelledby="modalImagen5Label" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <img src="{% static 'imagenes/gale5.jpg' %}" class="w-100 mb-3 rounded" alt="">
-                    <p class="modal-description">Sobre grande Valor:1500</p>
-                </div>
-            </div>
-        </div>
-    
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-    </body>
-    </html>
-    
- 
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</div>
-    <hr>
-    <footer class="footer">
-        <p id="texto3">Lucas Rodriguez, Cristobal Asencio @Copyrigth Derechos reservados.</p>
-        <div class="redes">
-            <a class="opboton" href="{% url 'opinion' %}"><button>Dejanos tu opinion</button></a>
-            <img src="{% static 'imagenes/whatsapp.png' %}" alt="redwsp">
-            <img src="{% static 'imagenes/facebook.png' %}" alt="redfacebook">
+    <!-- Sección del carrito -->
+    <div class="container mt-5">
+        <h2>Carrito de compras</h2>
+        <div id="carrito" class="row"></div>
+        <div class="row mt-3">
+            <div class="col text-end">
+                <button class="btn btn-danger" onclick="vaciarCarrito()">Vaciar carrito</button>
+            </div>
         </div>
-    </footer>
+    </div>
+
+    <div class="modal fade" id="modalImagen1" tabindex="-1" aria-labelledby="modalImagen1Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <img src="{% static 'imagenes/gale1.jpg' %}" class="w-100 mb-3 rounded" alt="">
+                <p class="modal-description">Caja pequeña - Valor: $2000</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalImagen2" tabindex="-1" aria-labelledby="modalImagen2Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <img src="{% static 'imagenes/gale2.jpg' %}" class="w-100 mb-3 rounded" alt="">
+                <p class="modal-description">Caja mediana - Valor: $4000</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalImagen3" tabindex="-1" aria-labelledby="modalImagen3Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <img src="{% static 'imagenes/gale3.jpg' %}" class="w-100 mb-3 rounded" alt="">
+                <p class="modal-description">Caja grande - Valor: $6000</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalImagen4" tabindex="-1" aria-labelledby="modalImagen4Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <img src="{% static 'imagenes/gale4.jpg' %}" class="w-100 mb-3 rounded" alt="">
+                <p class="modal-description">Sobre grande - Valor: $1000</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalImagen5" tabindex="-1" aria-labelledby="modalImagen5Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <img src="{% static 'imagenes/gale5.jpg' %}" class="w-100 mb-3 rounded" alt="">
+                <p class="modal-description">Sobre grande - Valor: $1500</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Funciones para el carrito de compras
+        let carrito = [];
+
+        function agregarAlCarrito(nombre, precio) {
+            carrito.push({ nombre: nombre, precio: precio });
+            mostrarCarrito();
+        }
+
+        function mostrarCarrito() {
+            let carritoContainer = document.getElementById('carrito');
+            carritoContainer.innerHTML = '';
+
+            carrito.forEach(item => {
+                let itemHTML = `
+                    <div class="col-lg-3 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">${item.nombre}</h5>
+                                <p class="card-text">Precio: $${item.precio}</p>
+                                <button class="btn btn-danger" onclick="eliminarDelCarrito('${item.nombre}')">Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                carritoContainer.innerHTML += itemHTML;
+            });
+        }
+
+        function eliminarDelCarrito(nombre) {
+            carrito = carrito.filter(item => item.nombre !== nombre);
+            mostrarCarrito();
+        }
+
+        function vaciarCarrito() {
+            carrito = [];
+            mostrarCarrito();
+        }
+    </script>
 </body>
 </html>
