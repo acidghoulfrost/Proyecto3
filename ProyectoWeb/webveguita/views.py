@@ -35,6 +35,10 @@ def login(request):
     context={}
     return render(request, 'login.html', context)
 
+def compra(request):
+    context={}
+    return render(request, 'compra.html', context)
+
 #------------------------------------------------------------
 
 def lista_productos(request):
@@ -88,4 +92,5 @@ def registro(request):
             return redirect(to="inicio")
         data["form"] = formulario
     return render(request, 'registration/registro.html', data)
+
 
