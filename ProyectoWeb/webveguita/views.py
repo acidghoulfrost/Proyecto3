@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from .forms import RegistroUserFrom
+from django.contrib import messages
 
 # Create your views here.
 
@@ -29,3 +32,14 @@ def login_view(request):
 def registro(request):
     context={}
     return render(request, 'registro.html', context)
+
+def registro_usuario(request):
+    if request.method == 'POST':
+        form = RegistroUserFrom(request.POSt)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Registro con exito! inicia sesion')
+            return redirect('login')
+    else:
+        form = RegistroUserFrom()
+    return render(request, 'registro.html', {'form':form})
