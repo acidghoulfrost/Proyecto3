@@ -13,14 +13,18 @@ class Cliente(models.Model):
     def __str__(self):
         return self.rut
     
-class Cajas(models.Model):
-    id_caja = models.AutoField(primary_key=True)
-    tipo_caja = models.CharField(max_length=25)
-    peso = models.IntegerField()
-    dimension = models.CharField(max_length=10)
+class Producto(models.Model):
+    codigo = models.AutoField(primary_key=True)
+    nombre = models.CharField(max_length=100)
+    descripcion = models.TextField()
+    imagen = models.ImageField(upload_to='productos/', null=True, blank=True)
+    precio = models.DecimalField(max_digits=10, decimal_places=2)
+    stock = models.IntegerField()
+    categoria = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.id_caja
+        return self.nombre
+
     
 class Boleta(models.Model):
     id_boleta = models.AutoField(primary_key=True)
@@ -33,7 +37,6 @@ class Boleta(models.Model):
 class Detalle_boleta(models.Model):
     id_boleta = models.ForeignKey('Boleta', blank=True, on_delete=models.CASCADE)
     id_detalle_boleta = models.AutoField(primary_key=True)
-    id_caja = models.ForeignKey('Cajas', blank=True, on_delete=models.CASCADE)
     cantidad = models.IntegerField()
     subtotal = models.BigIntegerField()
 
